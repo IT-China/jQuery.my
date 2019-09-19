@@ -152,7 +152,32 @@
         $('input').on('click', clickFn1);
 
         // on('类型','选择器',函数) --  7.4 事件委派解绑 - 暂未实现
+
+
+        // ============= 模块8：属性操作 =============
+        // .removeProp()  移除属性
         $('input').removeProp('disabled');
+
+        // .prop() 获取属性
+        // 功能1：测试单属性设置
+        $('input').eq(0)
+            // 值为字符串类型
+            .prop('value', 66)
+            // 值为数值类型
+            .prop('title', '提示提示');
+
+        // 功能2：测试多属性设置
+        $('input').eq(1).prop({
+            // 修改值
+            value: 77,
+            // 修改按钮的禁用状态
+            disabled: true,
+            // 类名需要写成 className
+            className: ''
+        });
+        // 功能3：单属性获取
+        console.log("模块8：$('input').prop('value')", $('input').prop('value'));
+
 
     </script>
 </body>
