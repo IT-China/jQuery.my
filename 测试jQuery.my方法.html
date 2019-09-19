@@ -60,6 +60,11 @@
         // 功能4：传入伪数组集合，都进行 jQuery 实例对象包装
         console.log("功能4：$(document.querySelectorAll('input'))", $(document.querySelectorAll('input')));
         console.log("功能4：$(document.getElementsByTagName('input'))", $(document.getElementsByTagName('input')));
+
+
+        // ============= 模块2：类名操作 =============
+        // 添加类
+        $('input').addClass('active').addClass('style').removeClass('active').toggleClass('active');
     </script>
 </body>
 
