@@ -14,11 +14,11 @@
 | `.removeClass()`           | +      | `classList.remove()`            |
 | `.toggleClass()`           | +      | `classList.toggle()`            |
 | 遍历                       |        |                                 |
-| `.each()`                  | 计划中 | 难点                            |
+| `.each()`                  | +      | 难点，高阶函数                  |
 | 显示隐藏切换               |        |                                 |
-| `.show()`                  | 计划中 |                                 |
-| `.hide()`                  | 计划中 |                                 |
-| `.toggle()`                | 计划中 |                                 |
+| `.show()`                  | +      |                                 |
+| `.hide()`                  | +      |                                 |
+| `.toggle()`                | +      | `getComputedStyle`              |
 | 值的获取和设置             |        |                                 |
 | `.val()`                   | 计划中 |                                 |
 | `.html()`                  | 计划中 |                                 |
