@@ -128,19 +128,32 @@
 
 
         // ============= 模块7：筛选查找方法 =============
-        // on('类型',函数) --  普通绑定
+        // on('类型',函数) --  7.1 普通绑定
         $('input').on('click', function (event) {
             console.log('模块7：普通事件 this 指向', this, 'event 事件对象', event);
             // jQuery 排他思想
             $(this).addClass('active').siblings().removeClass('active');
         });
 
-        // on('类型','选择器',函数) --  事件委派
+        // on('类型','选择器',函数) --  7.2 事件委派绑定
         $('body').on('click', 'div', function (event) {
             console.log('模块7：事件委派 this 指向', this, 'event 事件对象', event);
             // jQuery 排他思想
             $(this).addClass('gold').siblings().removeClass('gold');
         });
+
+        // off('类型',函数) --  7.3 普通解绑
+        var clickFn1 = function () {
+            alert('你点击了元素，点击后解绑事件');
+            //  7.3.2 解绑用 off
+            $('input').off('click', clickFn1);
+        }
+        // 7.3.1 绑定用 on
+        $('input').on('click', clickFn1);
+
+        // on('类型','选择器',函数) --  7.4 事件委派解绑 - 暂未实现
+
+
     </script>
 </body>
 
