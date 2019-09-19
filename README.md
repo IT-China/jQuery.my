@@ -34,10 +34,10 @@
 | `on('类型','选择器',函数)` | +      | 事件委派，难点，`event.target`      |
 | `off('类型',函数)`         | 完善中 | 普通解绑完成，`removeEventListener` |
 | 属性样式修改               |        |                                     |
-| `.prop()`                  | 计划中 |                                     |
-| `removeProp()`             |        |                                     |
-| `.attr()`                  | 计划中 |                                     |
-| `.removeAttr()`            |        |                                     |
+| `.removeProp()`            | +      |                                     |
+| `.prop()`                  | +      |                                     |
+| `.removeAttr()`            | +      |                                     |
+| `.attr()`                  | +      |                                     |
 | `.css()`                   | 计划中 | 难点                                |
 
 

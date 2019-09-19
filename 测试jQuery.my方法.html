@@ -29,8 +29,8 @@
     <input type="button" value="按钮2" />
     <input type="button" value="按钮3" />
     <input type="button" value="按钮4" disabled />
-    <div class="box">盒子1</div>
-    <div class="box">盒子2</div>
+    <div class="box" data-time='2018-06-11'>盒子1</div>
+    <div class="box" data-time='2018-12-26'>盒子2</div>
 
     <!-- 导入自己的 jQuery 文件 -->
     <script src="./lib/jquery.my.js"></script>
@@ -161,15 +161,16 @@
 
         // ============= 模块8：属性操作 =============
         // .removeProp()  移除属性
+        // debugger;
         $input.removeProp('disabled');
 
         // .prop() 获取属性
         // 功能1：测试单属性设置
         $input.eq(0)
             // 值为字符串类型
-            .prop('value', 66)
+            .prop('title', '提示提示')
             // 值为数值类型
-            .prop('title', '提示提示');
+            .prop('value', 66);
 
         // 功能2：测试多属性设置
         $input.eq(1).prop({
@@ -181,7 +182,31 @@
             className: ''
         });
         // 功能3：单属性获取
-        console.log("模块8：$input.prop('value')", $input.prop('value'));
+        console.log("模块8：$input.prop('disabled')", $input.prop('disabled'));
+        console.log("模块8：$div.prop('data-time')", $div.prop('data-time'));
+
+
+
+
+        // .removeAttr()  移除属性
+        $div.eq(-1).removeAttr('style');
+
+        // .attr() 获取属性
+        // 功能1：测试单属性设置
+        $div.eq(-1)
+            // 值为字符串类型
+            .attr('id', 'box')
+            // 值为数值类型
+            .attr('title', 6666666);
+
+        // 功能2：测试多属性设置
+        $div.eq(1).attr({
+            // 类名可以写成 class
+            class: 'box gold'
+        });
+        // 功能3：单属性获取
+        console.log("模块8：$input.attr('disabled')", $input.attr('disabled'));
+        console.log("模块8：$div.attr('data-time')", $div.attr('data-time'));
 
 
     </script>
