@@ -42,6 +42,17 @@
         console.log($('.box'));     // 类名查找
         console.log($('abc'));      // 查找不存在的标签
 
+        // 功能3：传入匿名函数处理
+        $(function () {
+            alert('2.jQuery入口函数，document 的 DOMContentLoaded 事件被执行了.');
+            console.log('jQuery入口函数', this);
+        });
+        // window 的 load 事件作为对照组 
+        window.addEventListener('load', function () {
+            alert('1.浏览器加载事件, window 的 load 事件被执行了.');
+            console.log('window 的 load 事件', this);
+        });
+
     </script>
 </body>
 
