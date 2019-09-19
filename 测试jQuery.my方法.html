@@ -208,7 +208,35 @@
         console.log("模块8：$input.attr('disabled')", $input.attr('disabled'));
         console.log("模块8：$div.attr('data-time')", $div.attr('data-time'));
 
+        // ============= 模块9：行内样式操作 =============
+        // 功能1：获取样式
+        console.log("模块9：$div.css('width')", $div.css('width'));
 
+        // 功能2：单样式属性设置
+        $div
+            // 测试纯数字
+            .css('height', 100)
+            // 测试数字+字符串
+            .css('width', '1000px')
+            // 测试纯字符串
+            .css('text-align', 'center');
+
+        // 功能3：多样式属性设置
+        $div
+            // 链式编程
+            .eq(0)
+            // 多属性操作
+            .css({
+                // 测试纯数字
+                width: 200,
+                height: 200,
+                // 测试数字+字符串
+                fontSize: '30px',
+                // 测试存字符串
+                float: 'left',
+                // 测试字符串属性
+                'line-height': 5,
+            });
     </script>
 </body>
 
