@@ -17,6 +17,10 @@
             background-color: hotpink;
             border: 1px solid #000;
         }
+
+        .gold {
+            background-color: gold;
+        }
     </style>
 </head>
 
@@ -110,15 +114,33 @@
 
 
         // ============= 模块6：筛选查找方法 =============
+        // .eq()
         console.log("模块6：$('div').eq(0)", $('div').eq(0));
         console.log("模块6：$('div').eq(-1)", $('div').eq(-1));
+
+        // .parent()  .children()
         console.log("模块6：$('div').parent()", $('div').parent());
         console.log("模块6：$('body').children()", $('body').children());
+
+        // .siblings()  .find()
         console.log("模块6：$('input').eq(1).siblings()", $('input').eq(1).siblings());
         console.log("模块6：$('body').find('input')", $('body').find('input'));
 
 
+        // ============= 模块7：筛选查找方法 =============
+        // on('类型',函数) --  普通绑定
+        $('input').on('click', function (event) {
+            console.log('模块7：普通事件 this 指向', this, 'event 事件对象', event);
+            // jQuery 排他思想
+            $(this).addClass('active').siblings().removeClass('active');
+        });
 
+        // on('类型','选择器',函数) --  事件委派
+        $('body').on('click', 'div', function (event) {
+            console.log('模块7：事件委派 this 指向', this, 'event 事件对象', event);
+            // jQuery 排他思想
+            $(this).addClass('gold').siblings().removeClass('gold');
+        });
     </script>
 </body>
 
