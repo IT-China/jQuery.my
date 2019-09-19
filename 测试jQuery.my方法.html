@@ -87,6 +87,26 @@
             // 切换
             .toggle()
             .toggle()
+
+
+        // ============= 模块5：获取和设置内容和表单值 =============
+        // debugger;
+        // .val() 表单值
+        console.log("模块5.1：获取 $('input').val()", $('input').val());
+        console.log("模块5.1：设置 val()看页面按钮值");
+        $('input').val('按钮值发生变化');
+
+        // .text() text内容
+        console.log("模块5.3：获取 $('div').text()", $('div').text());
+        console.log("模块5.3：设置 text()看页面div");
+        $('div').text('<a href="http://github.com/Megasu">点击跳转</a>');
+
+        // .html() html内容
+        console.log("模块5.2：获取 $('div').html()", $('div').html());
+        console.log("模块5.2：设置 html()看页面div");
+        $('div').html('<a href="http://github.com/Megasu">点击跳转</a>');
+
+
     </script>
 </body>
 

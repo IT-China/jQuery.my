@@ -20,9 +20,9 @@
 | `.hide()`                  | +      |                                 |
 | `.toggle()`                | +      | `getComputedStyle`              |
 | 值的获取和设置             |        |                                 |
-| `.val()`                   | 计划中 |                                 |
-| `.html()`                  | 计划中 |                                 |
-| `.text()`                  | 计划中 |                                 |
+| `.val()`                   | +      | `value`                         |
+| `.html()`                  | +      | `innerHTML`                     |
+| `.text()`                  | +      | `innerText`                     |
 | 关系查找                   |        |                                 |
 | `.eq()`                    | 计划中 |                                 |
 | `.parent()`                | 计划中 |                                 |
