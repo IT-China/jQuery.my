@@ -38,13 +38,18 @@
     <!-- <script src="./lib/jquery-1.12.4.js"></script> -->
     <script>
         // 功能测试
+        // 提醒：经历把查找后的 jQuery 对象保存到某个变量中，因为每次 $() 调用的时候都会重新实例一个新的 jQuery 对象
+        // 选择器和变量写法参考：
+        var $body = $('body');
+        var $input = $('input');
+        var $div = $('div');
 
         // 功能0：$ jQuery 变量名
         console.log('功能0：$  变量名', $);
         console.log('功能0：jQuery 变量名', jQuery);
 
         // 功能1：选择器查找
-        console.log("功能1：$('input')", $('input'));    // 标签名查找
+        console.log("功能1：$('div)", $('div'));    // 标签名查找
         console.log("功能1：$('.box')", $('.box'));     // 类名查找
         console.log("功能1：$('abc')", $('abc'));      // 查找不存在的标签
 
@@ -70,7 +75,7 @@
 
         // ============= 模块2：类名操作 =============
         // debugger;
-        $('input')
+        $input
             // 添加类 - 链式编程
             .addClass('active').addClass('style')
             // 删除类 - 链式编程
@@ -79,13 +84,13 @@
             .toggleClass('active');
 
         // ============= 模块3：each 遍历 =============
-        $('input').each(function (index, item) {
+        $input.each(function (index, item) {
             console.log('模块3：each 遍历', index, item);
         });
 
 
         // ============= 模块4：显示隐藏切换 =============
-        $('div')
+        $div
             // 显示
             .hide()
             // 隐藏
@@ -98,45 +103,45 @@
         // ============= 模块5：获取和设置内容和表单值 =============
         // debugger;
         // .val() 表单值
-        console.log("模块5.1：获取 $('input').val()", $('input').val());
+        console.log("模块5.1：获取 $input.val()", $input.val());
         console.log("模块5.1：设置 val()看页面按钮值");
-        $('input').val('按钮值发生变化');
+        $input.val('按钮值发生变化');
 
         // .text() text内容
-        console.log("模块5.3：获取 $('div').text()", $('div').text());
+        console.log("模块5.3：获取 $div.text()", $div.text());
         console.log("模块5.3：设置 text()看页面div");
-        $('div').text('<a href="http://github.com/Megasu">点击跳转</a>');
+        $div.text('<a href="http://github.com/Megasu">点击跳转</a>');
 
         // .html() html内容
-        console.log("模块5.2：获取 $('div').html()", $('div').html());
+        console.log("模块5.2：获取 $div.html()", $div.html());
         console.log("模块5.2：设置 html()看页面div");
-        $('div').html('<a href="http://github.com/Megasu">点击跳转</a>');
+        $div.html('<a href="http://github.com/Megasu">点击跳转</a>');
 
 
         // ============= 模块6：筛选查找方法 =============
         // .eq()
-        console.log("模块6：$('div').eq(0)", $('div').eq(0));
-        console.log("模块6：$('div').eq(-1)", $('div').eq(-1));
+        console.log("模块6：$div.eq(0)", $div.eq(0));
+        console.log("模块6：$div.eq(-1)", $div.eq(-1));
 
         // .parent()  .children()
-        console.log("模块6：$('div').parent()", $('div').parent());
-        console.log("模块6：$('body').children()", $('body').children());
+        console.log("模块6：$div.parent()", $div.parent());
+        console.log("模块6：$body.children()", $body.children());
 
         // .siblings()  .find()
-        console.log("模块6：$('input').eq(1).siblings()", $('input').eq(1).siblings());
-        console.log("模块6：$('body').find('input')", $('body').find('input'));
+        console.log("模块6：$input.eq(1).siblings()", $input.eq(1).siblings());
+        console.log("模块6：$body.find('input')", $body.find('input'));
 
 
         // ============= 模块7：筛选查找方法 =============
         // on('类型',函数) --  7.1 普通绑定
-        $('input').on('click', function (event) {
+        $input.on('click', function (event) {
             console.log('模块7：普通事件 this 指向', this, 'event 事件对象', event);
             // jQuery 排他思想
             $(this).addClass('active').siblings().removeClass('active');
         });
 
         // on('类型','选择器',函数) --  7.2 事件委派绑定
-        $('body').on('click', 'div', function (event) {
+        $body.on('click', 'div', function (event) {
             console.log('模块7：事件委派 this 指向', this, 'event 事件对象', event);
             // jQuery 排他思想
             $(this).addClass('gold').siblings().removeClass('gold');
@@ -146,28 +151,28 @@
         var clickFn1 = function () {
             alert('你点击了元素，点击后解绑事件');
             //  7.3.2 解绑用 off
-            $('input').off('click', clickFn1);
+            $input.off('click', clickFn1);
         }
         // 7.3.1 绑定用 on
-        $('input').on('click', clickFn1);
+        $input.on('click', clickFn1);
 
         // on('类型','选择器',函数) --  7.4 事件委派解绑 - 暂未实现
 
 
         // ============= 模块8：属性操作 =============
         // .removeProp()  移除属性
-        $('input').removeProp('disabled');
+        $input.removeProp('disabled');
 
         // .prop() 获取属性
         // 功能1：测试单属性设置
-        $('input').eq(0)
+        $input.eq(0)
             // 值为字符串类型
             .prop('value', 66)
             // 值为数值类型
             .prop('title', '提示提示');
 
         // 功能2：测试多属性设置
-        $('input').eq(1).prop({
+        $input.eq(1).prop({
             // 修改值
             value: 77,
             // 修改按钮的禁用状态
@@ -176,7 +181,7 @@
             className: ''
         });
         // 功能3：单属性获取
-        console.log("模块8：$('input').prop('value')", $('input').prop('value'));
+        console.log("模块8：$input.prop('value')", $input.prop('value'));
 
 
     </script>
