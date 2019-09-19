@@ -23,6 +23,8 @@
 <body>
     <input type="button" value="按钮1" class="active" />
     <input type="button" value="按钮2" />
+    <input type="button" value="按钮3" />
+    <input type="button" value="按钮4" />
     <div class="box">盒子1</div>
     <div class="box">盒子2</div>
 
@@ -105,6 +107,13 @@
         console.log("模块5.2：获取 $('div').html()", $('div').html());
         console.log("模块5.2：设置 html()看页面div");
         $('div').html('<a href="http://github.com/Megasu">点击跳转</a>');
+
+
+        // ============= 模块6：筛选查找方法 =============
+        console.log("模块6：$('div').eq(0)", $('div').eq(0));
+        console.log("模块6：$('div').parent()", $('div').parent());
+        console.log("模块6：$('body').children()", $('body').children());
+
 
 
     </script>

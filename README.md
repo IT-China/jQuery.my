@@ -24,10 +24,10 @@
 | `.html()`                  | +      | `innerHTML`                     |
 | `.text()`                  | +      | `innerText`                     |
 | 关系查找                   |        |                                 |
-| `.eq()`                    | 计划中 |                                 |
-| `.parent()`                | 计划中 |                                 |
-| `.children()`              | 计划中 |                                 |
-| `.siblings()`              | 计划中 |                                 |
+| `.eq()`                    | +      | `index`                         |
+| `.parent()`                | +      | `parentNode`                    |
+| `.children()`              | +      | `children`                      |
+| `.siblings()`              | +      | `parentNode.children`           |
 | 事件绑定                   |        |                                 |
 | `on('类型',函数)`          | 计划中 | 普通绑定                        |
 | `on('类型','选择器',函数)` | 计划中 | 事件委派                        |
