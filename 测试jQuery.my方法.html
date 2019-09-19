@@ -63,8 +63,19 @@
 
 
         // ============= 模块2：类名操作 =============
-        // 添加类
-        $('input').addClass('active').addClass('style').removeClass('active').toggleClass('active');
+        // debugger;
+        $('input')
+            // 添加类 - 链式编程
+            .addClass('active').addClass('style')
+            // 删除类 - 链式编程
+            .removeClass('active')
+            // 切换类 - 链式编程
+            .toggleClass('active');
+
+        // ============= 模块3：each 遍历 =============
+        $('input').each(function (index, item) {
+            console.log('模块3：each 遍历', index, item);
+        });
     </script>
 </body>
 
