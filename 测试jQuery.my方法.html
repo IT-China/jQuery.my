@@ -28,7 +28,7 @@
     <input type="button" value="按钮1" class="active" />
     <input type="button" value="按钮2" />
     <input type="button" value="按钮3" />
-    <input type="button" value="按钮4" />
+    <input type="button" value="按钮4" disabled />
     <div class="box">盒子1</div>
     <div class="box">盒子2</div>
 
@@ -152,7 +152,7 @@
         $('input').on('click', clickFn1);
 
         // on('类型','选择器',函数) --  7.4 事件委派解绑 - 暂未实现
-
+        $('input').removeProp('disabled');
 
     </script>
 </body>
